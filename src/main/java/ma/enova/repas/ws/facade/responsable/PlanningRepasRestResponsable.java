@@ -98,13 +98,13 @@ public class PlanningRepasRestResponsable  extends AbstractController<PlanningRe
         return service.deleteByTypeRepasId(id);
     }
     @ApiOperation("Finds planningRepass by criteria")
-    @PostMapping("listByCriteria")
+    @PostMapping("find-paginated-by-criteria ")
     public ResponseEntity<List<PlanningRepasDto>> findByCriteria(@RequestBody PlanningRepasCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated planningRepass by criteria")
-    @PostMapping("paginatedListByCriteria")
+    @PostMapping("paginatedfind-paginated-by-criteria ")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody PlanningRepasCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

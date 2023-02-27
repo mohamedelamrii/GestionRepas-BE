@@ -103,13 +103,13 @@ public class PlanningRestResponsable  extends AbstractController<Planning, Plann
     }
 
     @ApiOperation("Finds plannings by criteria")
-    @PostMapping("listByCriteria")
+    @PostMapping("find-paginated-by-criteria ")
     public ResponseEntity<List<PlanningDto>> findByCriteria(@RequestBody PlanningCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated plannings by criteria")
-    @PostMapping("paginatedListByCriteria")
+    @PostMapping("paginatedfind-paginated-by-criteria ")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody PlanningCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

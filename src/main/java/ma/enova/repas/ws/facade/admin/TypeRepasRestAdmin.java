@@ -68,13 +68,13 @@ public class TypeRepasRestAdmin  extends AbstractController<TypeRepas, TypeRepas
             return super.deleteByIdIn(ids);
      }
     @ApiOperation("Finds typeRepass by criteria")
-    @PostMapping("listByCriteria")
+    @PostMapping("find-paginated-by-criteria ")
     public ResponseEntity<List<TypeRepasDto>> findByCriteria(@RequestBody TypeRepasCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated typeRepass by criteria")
-    @PostMapping("paginatedListByCriteria")
+    @PostMapping("paginatedfind-paginated-by-criteria ")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody TypeRepasCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

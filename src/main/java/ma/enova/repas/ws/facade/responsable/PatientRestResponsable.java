@@ -68,13 +68,13 @@ public class PatientRestResponsable  extends AbstractController<Patient, Patient
             return super.deleteByIdIn(ids);
      }
     @ApiOperation("Finds patients by criteria")
-    @PostMapping("listByCriteria")
+    @PostMapping("find-paginated-by-criteria ")
     public ResponseEntity<List<PatientDto>> findByCriteria(@RequestBody PatientCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated patients by criteria")
-    @PostMapping("paginatedListByCriteria")
+    @PostMapping("paginatedfind-paginated-by-criteria ")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody PatientCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

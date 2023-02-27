@@ -84,13 +84,13 @@ public class RepasRestAdmin  extends AbstractController<Repas, RepasDto, RepasHi
     }
 
     @ApiOperation("Finds repass by criteria")
-    @PostMapping("listByCriteria")
+    @PostMapping("find-paginated-by-criteria ")
     public ResponseEntity<List<RepasDto>> findByCriteria(@RequestBody RepasCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated repass by criteria")
-    @PostMapping("paginatedListByCriteria")
+    @PostMapping("paginatedfind-paginated-by-criteria ")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody RepasCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

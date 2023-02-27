@@ -68,13 +68,13 @@ public class ResponsablePlanningRestResponsable  extends AbstractController<Resp
             return super.deleteByIdIn(ids);
      }
     @ApiOperation("Finds responsablePlannings by criteria")
-    @PostMapping("listByCriteria")
+    @PostMapping("find-paginated-by-criteria ")
     public ResponseEntity<List<ResponsablePlanningDto>> findByCriteria(@RequestBody ResponsablePlanningCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated responsablePlannings by criteria")
-    @PostMapping("paginatedListByCriteria")
+    @PostMapping("paginatedfind-paginated-by-criteria ")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody ResponsablePlanningCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

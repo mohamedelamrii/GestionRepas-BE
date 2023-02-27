@@ -37,7 +37,7 @@ public class JourRestAdmin  extends AbstractController<Jour, JourDto, JourHistor
         return super.update(dto);
     }
     @ApiOperation("Finds a jour by id")
-    @GetMapping("{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<JourDto> findById(@PathVariable Long id, String[] includes, String[] excludes) throws Exception {
         return super.findById(id, includes, excludes);
     }
@@ -68,13 +68,13 @@ public class JourRestAdmin  extends AbstractController<Jour, JourDto, JourHistor
             return super.deleteByIdIn(ids);
      }
     @ApiOperation("Finds jours by criteria")
-    @PostMapping("listByCriteria")
+    @PostMapping("find-paginated-by-criteria ")
     public ResponseEntity<List<JourDto>> findByCriteria(@RequestBody JourCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated jours by criteria")
-    @PostMapping("paginatedListByCriteria")
+    @PostMapping("paginatedfind-paginated-by-criteria ")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody JourCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }
