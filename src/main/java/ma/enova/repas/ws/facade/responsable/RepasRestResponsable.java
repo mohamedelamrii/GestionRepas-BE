@@ -23,7 +23,7 @@ import ma.enova.repas.zynerator.process.Result;
 
 @Api("Manages repas services")
 @RestController
-@RequestMapping("/api/responsable/repas")
+@RequestMapping("/api/responsable/repas/")
 public class RepasRestResponsable  extends AbstractController<Repas, RepasDto, RepasHistory, RepasCriteria, RepasHistoryCriteria, RepasResponsableService, RepasConverter> {
 
     @ApiOperation("Finds a list of all repass")
@@ -47,7 +47,7 @@ public class RepasRestResponsable  extends AbstractController<Repas, RepasDto, R
         return super.save(dto);
     }
     @ApiOperation("Delete list of repas")
-    @DeleteMapping("/delete")
+    @DeleteMapping("delete")
     public ResponseEntity<List<RepasDto>> delete(@RequestBody List<RepasDto> listToDelete) throws Exception {
         return super.delete(listToDelete);
     }
@@ -84,13 +84,13 @@ public class RepasRestResponsable  extends AbstractController<Repas, RepasDto, R
     }
 
     @ApiOperation("Finds repass by criteria")
-    @PostMapping("find-paginated-by-criteria")
+    @PostMapping("find-by-criteria")
     public ResponseEntity<List<RepasDto>> findByCriteria(@RequestBody RepasCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated repass by criteria")
-    @PostMapping("paginatedfind-paginated-by-criteria")
+    @PostMapping("find-paginated-by-criteria")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody RepasCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

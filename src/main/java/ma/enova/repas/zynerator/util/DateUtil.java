@@ -21,6 +21,8 @@ public class DateUtil {
     public final static String DATE_FORMAT_FILE = "yyMMddHHmmss";
     public static final String HOUR_FORMAT = "HH:mm:ss";
     public static final String DATE_FORMAT_ENG = "EEE MMM dd yyyy HH:mm:ss 'GMT'z";
+
+    public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     public static final String DATE_FORMAT_PF = "EEE MMM dd HH:mm:ss z yyyy";
     public static final long ONE_HOUR = 60 * 60 * 1000L;
 
@@ -45,7 +47,8 @@ public class DateUtil {
     }
 
     public static LocalDateTime stringEnToDate(final String strDate) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT_ENG, Locale.ENGLISH);
+        System.out.println("date :::::::::" + strDate);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT, Locale.ENGLISH);
         return LocalDateTime.parse(strDate, formatter);
 
     }

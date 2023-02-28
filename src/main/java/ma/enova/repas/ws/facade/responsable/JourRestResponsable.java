@@ -10,6 +10,7 @@ import ma.enova.repas.dao.criteria.history.JourHistoryCriteria;
 import ma.enova.repas.service.facade.responsable.JourResponsableService;
 import ma.enova.repas.ws.converter.JourConverter;
 import ma.enova.repas.ws.dto.JourDto;
+import ma.enova.repas.ws.dto.TypeRepasDto;
 import ma.enova.repas.zynerator.controller.AbstractController;
 import ma.enova.repas.zynerator.dto.AuditEntityDto;
 import ma.enova.repas.zynerator.util.PaginatedList;
@@ -23,7 +24,7 @@ import ma.enova.repas.zynerator.process.Result;
 
 @Api("Manages jour services")
 @RestController
-@RequestMapping("/api/responsable/jour")
+@RequestMapping("/api/responsable/jour/")
 public class JourRestResponsable  extends AbstractController<Jour, JourDto, JourHistory, JourCriteria, JourHistoryCriteria, JourResponsableService, JourConverter> {
 
     @ApiOperation("Finds a list of all jours")
@@ -47,7 +48,7 @@ public class JourRestResponsable  extends AbstractController<Jour, JourDto, Jour
         return super.save(dto);
     }
     @ApiOperation("Delete list of jour")
-    @DeleteMapping("/delete")
+    @DeleteMapping("delete")
     public ResponseEntity<List<JourDto>> delete(@RequestBody List<JourDto> listToDelete) throws Exception {
         return super.delete(listToDelete);
     }
@@ -68,13 +69,14 @@ public class JourRestResponsable  extends AbstractController<Jour, JourDto, Jour
             return super.deleteByIdIn(ids);
      }
     @ApiOperation("Finds jours by criteria")
-    @PostMapping("find-paginated-by-criteria")
+    @PostMapping("find-by-criteria")
     public ResponseEntity<List<JourDto>> findByCriteria(@RequestBody JourCriteria criteria) throws Exception {
-        return super.findByCriteria(criteria);
+        ResponseEntity<List<JourDto>> byCriteria = super.findByCriteria(criteria);
+        return byCriteria;
     }
 
     @ApiOperation("Finds paginated jours by criteria")
-    @PostMapping("paginatedfind-paginated-by-criteria")
+    @PostMapping("find-paginated-by-criteria")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody JourCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

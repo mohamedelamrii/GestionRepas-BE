@@ -26,7 +26,7 @@ import ma.enova.repas.workflow.responsable.process.planningexecution.save.Planni
 
 @Api("Manages planningExecution services")
 @RestController
-@RequestMapping("/api/responsable/planningExecution")
+@RequestMapping("/api/responsable/planningExecution/")
 public class PlanningExecutionRestResponsable  extends AbstractController<PlanningExecution, PlanningExecutionDto, PlanningExecutionHistory, PlanningExecutionCriteria, PlanningExecutionHistoryCriteria, PlanningExecutionResponsableService, PlanningExecutionConverter> {
 
     @ApiOperation("save a planningExecution")
@@ -56,7 +56,7 @@ public class PlanningExecutionRestResponsable  extends AbstractController<Planni
         return super.save(dto);
     }
     @ApiOperation("Delete list of planningExecution")
-    @DeleteMapping("/delete")
+    @DeleteMapping("delete")
     public ResponseEntity<List<PlanningExecutionDto>> delete(@RequestBody List<PlanningExecutionDto> listToDelete) throws Exception {
         return super.delete(listToDelete);
     }
@@ -87,13 +87,13 @@ public class PlanningExecutionRestResponsable  extends AbstractController<Planni
         return service.deleteByPlanningRepasId(id);
     }
     @ApiOperation("Finds planningExecutions by criteria")
-    @PostMapping("find-paginated-by-criteria")
+    @PostMapping("find-by-criteria")
     public ResponseEntity<List<PlanningExecutionDto>> findByCriteria(@RequestBody PlanningExecutionCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated planningExecutions by criteria")
-    @PostMapping("paginatedfind-paginated-by-criteria")
+    @PostMapping("find-paginated-by-criteria")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody PlanningExecutionCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

@@ -4,7 +4,8 @@ import ma.enova.repas.zynerator.audit.Log;
 import ma.enova.repas.zynerator.dto.AuditBaseDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-    import java.util.List;
+import java.time.LocalDateTime;
+import java.util.List;
     import java.util.Date;
     import javax.persistence.Temporal;
     import javax.persistence.TemporalType;

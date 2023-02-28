@@ -23,7 +23,7 @@ import ma.enova.repas.zynerator.process.Result;
 
 @Api("Manages patient services")
 @RestController
-@RequestMapping("/api/responsable/patient")
+@RequestMapping("/api/responsable/patient/")
 public class PatientRestResponsable  extends AbstractController<Patient, PatientDto, PatientHistory, PatientCriteria, PatientHistoryCriteria, PatientResponsableService, PatientConverter> {
 
     @ApiOperation("Finds a list of all patients")
@@ -47,7 +47,7 @@ public class PatientRestResponsable  extends AbstractController<Patient, Patient
         return super.save(dto);
     }
     @ApiOperation("Delete list of patient")
-    @DeleteMapping("/delete")
+    @DeleteMapping("delete")
     public ResponseEntity<List<PatientDto>> delete(@RequestBody List<PatientDto> listToDelete) throws Exception {
         return super.delete(listToDelete);
     }
@@ -68,13 +68,13 @@ public class PatientRestResponsable  extends AbstractController<Patient, Patient
             return super.deleteByIdIn(ids);
      }
     @ApiOperation("Finds patients by criteria")
-    @PostMapping("find-paginated-by-criteria")
+    @PostMapping("find-by-criteria")
     public ResponseEntity<List<PatientDto>> findByCriteria(@RequestBody PatientCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated patients by criteria")
-    @PostMapping("paginatedfind-paginated-by-criteria")
+    @PostMapping("find-paginated-by-criteria")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody PatientCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }
