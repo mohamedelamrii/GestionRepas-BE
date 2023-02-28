@@ -23,7 +23,7 @@ import ma.enova.repas.zynerator.process.Result;
 
 @Api("Manages planningRepas services")
 @RestController
-@RequestMapping("/api/admin/planningRepas")
+@RequestMapping("/api/admin/planningRepas/")
 public class PlanningRepasRestAdmin  extends AbstractController<PlanningRepas, PlanningRepasDto, PlanningRepasHistory, PlanningRepasCriteria, PlanningRepasHistoryCriteria, PlanningRepasAdminService, PlanningRepasConverter> {
 
     @ApiOperation("Finds a list of all planningRepass")
@@ -47,7 +47,7 @@ public class PlanningRepasRestAdmin  extends AbstractController<PlanningRepas, P
         return super.save(dto);
     }
     @ApiOperation("Delete list of planningRepas")
-    @DeleteMapping("/delete")
+    @DeleteMapping("delete")
     public ResponseEntity<List<PlanningRepasDto>> delete(@RequestBody List<PlanningRepasDto> listToDelete) throws Exception {
         return super.delete(listToDelete);
     }
@@ -98,13 +98,13 @@ public class PlanningRepasRestAdmin  extends AbstractController<PlanningRepas, P
         return service.deleteByTypeRepasId(id);
     }
     @ApiOperation("Finds planningRepass by criteria")
-    @PostMapping("find-paginated-by-criteria")
+    @PostMapping("find-by-criteria")
     public ResponseEntity<List<PlanningRepasDto>> findByCriteria(@RequestBody PlanningRepasCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated planningRepass by criteria")
-    @PostMapping("paginatedfind-paginated-by-criteria")
+    @PostMapping("find-paginated-by-criteria")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody PlanningRepasCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

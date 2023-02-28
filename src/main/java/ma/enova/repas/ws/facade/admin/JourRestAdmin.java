@@ -23,7 +23,7 @@ import ma.enova.repas.zynerator.process.Result;
 
 @Api("Manages jour services")
 @RestController
-@RequestMapping("/api/admin/jour")
+@RequestMapping("/api/admin/jour/")
 public class JourRestAdmin  extends AbstractController<Jour, JourDto, JourHistory, JourCriteria, JourHistoryCriteria, JourAdminService, JourConverter> {
 
     @ApiOperation("Finds a list of all jours")
@@ -47,7 +47,7 @@ public class JourRestAdmin  extends AbstractController<Jour, JourDto, JourHistor
         return super.save(dto);
     }
     @ApiOperation("Delete list of jour")
-    @DeleteMapping("/delete")
+    @DeleteMapping("delete")
     public ResponseEntity<List<JourDto>> delete(@RequestBody List<JourDto> listToDelete) throws Exception {
         return super.delete(listToDelete);
     }
@@ -68,13 +68,13 @@ public class JourRestAdmin  extends AbstractController<Jour, JourDto, JourHistor
             return super.deleteByIdIn(ids);
      }
     @ApiOperation("Finds jours by criteria")
-    @PostMapping("find-paginated-by-criteria")
+    @PostMapping("find-by-criteria")
     public ResponseEntity<List<JourDto>> findByCriteria(@RequestBody JourCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated jours by criteria")
-    @PostMapping("paginatedfind-paginated-by-criteria")
+    @PostMapping("find-paginated-by-criteria")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody JourCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }
