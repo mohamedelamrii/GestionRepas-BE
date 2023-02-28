@@ -38,7 +38,7 @@ public class JourRestResponsable  extends AbstractController<Jour, JourDto, Jour
         return super.update(dto);
     }
     @ApiOperation("Finds a jour by id")
-    @GetMapping("{id}")
+    @GetMapping("id/{id}")
     public ResponseEntity<JourDto> findById(@PathVariable Long id, String[] includes, String[] excludes) throws Exception {
         return super.findById(id, includes, excludes);
     }

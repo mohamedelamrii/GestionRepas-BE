@@ -46,7 +46,7 @@ public class PlanningExecutionRestResponsable  extends AbstractController<Planni
         return super.update(dto);
     }
     @ApiOperation("Finds a planningExecution by id")
-    @GetMapping("{id}")
+    @GetMapping("id/{id}")
     public ResponseEntity<PlanningExecutionDto> findById(@PathVariable Long id, String[] includes, String[] excludes) throws Exception {
         return super.findById(id, includes, excludes);
     }

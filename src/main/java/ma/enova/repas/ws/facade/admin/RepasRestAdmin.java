@@ -37,7 +37,7 @@ public class RepasRestAdmin  extends AbstractController<Repas, RepasDto, RepasHi
         return super.update(dto);
     }
     @ApiOperation("Finds a repas by id")
-    @GetMapping("{id}")
+    @GetMapping("id/{id}")
     public ResponseEntity<RepasDto> findById(@PathVariable Long id, String[] includes, String[] excludes) throws Exception {
         return super.findById(id, includes, excludes);
     }
