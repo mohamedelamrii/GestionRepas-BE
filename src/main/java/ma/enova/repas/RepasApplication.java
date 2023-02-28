@@ -43,7 +43,7 @@ public class RepasApplication {
     public CommandLineRunner demo(UserService userService, RoleService roleService
     ) {
     return (args) -> {
-        if(true){
+        if(false){
             Map<String,String> etats=new HashMap<>();
             etats.put("Initialisé","initialise");
             etats.put("En cours","encours");

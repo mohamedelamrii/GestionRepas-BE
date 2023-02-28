@@ -68,13 +68,13 @@ public class JourRestResponsable  extends AbstractController<Jour, JourDto, Jour
             return super.deleteByIdIn(ids);
      }
     @ApiOperation("Finds jours by criteria")
-    @PostMapping("find-paginated-by-criteria ")
+    @PostMapping("find-paginated-by-criteria")
     public ResponseEntity<List<JourDto>> findByCriteria(@RequestBody JourCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated jours by criteria")
-    @PostMapping("paginatedfind-paginated-by-criteria ")
+    @PostMapping("paginatedfind-paginated-by-criteria")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody JourCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }

@@ -88,13 +88,13 @@ public class RepasCategoriePatientRestAdmin  extends AbstractController<RepasCat
         return service.deleteByCategoriePatientId(id);
     }
     @ApiOperation("Finds repasCategoriePatients by criteria")
-    @PostMapping("find-paginated-by-criteria ")
+    @PostMapping("find-paginated-by-criteria")
     public ResponseEntity<List<RepasCategoriePatientDto>> findByCriteria(@RequestBody RepasCategoriePatientCriteria criteria) throws Exception {
         return super.findByCriteria(criteria);
     }
 
     @ApiOperation("Finds paginated repasCategoriePatients by criteria")
-    @PostMapping("paginatedfind-paginated-by-criteria ")
+    @PostMapping("paginatedfind-paginated-by-criteria")
     public ResponseEntity<PaginatedList> findPaginatedByCriteria(@RequestBody RepasCategoriePatientCriteria criteria) throws Exception {
         return super.findPaginatedByCriteria(criteria);
     }
